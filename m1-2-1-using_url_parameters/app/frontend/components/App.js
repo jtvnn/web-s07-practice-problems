@@ -11,9 +11,10 @@ import { Link, Routes, Route, useParams } from 'react-router-dom'
 
 const Color = () => {
   // 2- use the hook here
+  const { color } = useParams();
   return (
     // 3, 4 - use the correct text content and style
-    <h3 style={{ color: "green" }}>The color is {"green"}</h3>
+    <h3 style={{ color }}>The color is {color}</h3>
   )
 }
 
@@ -27,6 +28,7 @@ export default function App() {
       </nav>
       <Routes>
         {/* 1- create your Route here */}
+        <Route path='/:color' element={<Color />}></Route>
       </Routes>
     </div>
   )
