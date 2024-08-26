@@ -18,17 +18,31 @@
     const { useState } = React
     // PROBLEM 1 - Create `username` and `password` states to store the input values
 
+    
     // PROBLEM 2 - Wire `changeUsername` and `changePassword` to their inputs using an `onChange` prop
+    // const changeUsername = event => {
+    //   let { value } = event.target 
+    //   setUsername(value)
+    // }
 
+    // const changePassword = event => {
+    //   let { value } = event.target
+    //   setPassword(value)
+    // }
     // PROBLEM 3 - Implement `changeUsername` and `changePassword` so state is updated on every change
     function App() {
-      let username // 1- use the state hook to create this state
-      let password // 1- use the state hook to create this state
+      let [username, setUsername] = useState('')
+      let [password, setPassword] = useState('')
       const changeUsername = event => {
         // 3- Implement the change handler
+        let { value } = event.target;
+          setUsername(value)
+
       }
       const changePassword = event => {
         // 3- Implement the change handler
+        let {value } = event.target
+        setPassword(value)
       }
       return (
         <form>
@@ -40,6 +54,7 @@
               type="text"
               placeholder="Type Username"
               maxLength={10}
+              onChange={changeUsername}
             /><br />
             You are typing: {username}
           </div>
@@ -52,6 +67,7 @@
               type="password"
               placeholder="Type password"
               minLength={8}
+              onChange={changePassword}
             /><br />
             You are typing: {password}
           </div>
