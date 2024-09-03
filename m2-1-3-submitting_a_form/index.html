@@ -26,10 +26,12 @@
       let [username, setUsername] = useState('')
       let [password, setPassword] = useState('')
       const submit = event => {
-        // implement
+       event.preventDefault()
+       const payload  = { username, password }
+       console.log(payload);
       }
       return (
-        <form>{/* this form needs its onSubmit prop */}
+        <form onSubmit={submit}>{/* this form needs its onSubmit prop */}
           <div>
             <label htmlFor="fname">Username </label><br />
             <input
