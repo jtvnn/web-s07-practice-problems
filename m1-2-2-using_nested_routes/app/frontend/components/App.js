@@ -18,8 +18,8 @@ const Food = () => {
         <Link to="pizza">Pizza </Link>
       </nav>
       <Routes>
-        <Route element={<h3 className="el">Broccoli</h3>} />
-        <Route element={<h3 className="el">Pizza</h3>} />
+        <Route path="broccoli" element={<h3 className="el">Broccoli</h3>} />
+        <Route path="pizza" element={<h3 className="el">Pizza</h3>} />
       </Routes>
     </div>
   )
@@ -33,7 +33,7 @@ export default function App() {
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route element={<Food />} />
+        <Route path="food/*" element={<Food />} />
       </Routes>
     </div>
   )
