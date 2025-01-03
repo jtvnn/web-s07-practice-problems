@@ -14,7 +14,7 @@ const Color = () => {
   const { color } = useParams()
   return (
     // 3, 4 - use the correct text content and style
-    <h3 style={{ color }}>The color is {color}</h3>
+    <h3 style={{ color: }}>The color is {color}</h3>
   )
 }
 
