@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>peeps piepersmi
 <html lang="en">
 
 <head>
@@ -14,19 +14,21 @@
 
 <body>
   <div id="root"></div>
-  <script type="text/babel">
+  <script type="text/babel">      
     const { useState } = React
     // PROBLEM 1 - Define the initial state (`initialValues`) that will hold all input values
-
+ 
     // PROBLEM 2 - Create the actual state (`values`) using the initial state from problem 1
 
     // PROBLEM 3 - Implement `handleChange`
 
-    const initialValues = { /* 1- create initial values */ }
+    const initialValues = { username: '', password: '', bio: '' }
     function App() {
-      const values = {} // 2- create a single state to store all values using useState
+      const [values, setValues] = useState(initialValues) // 2- create a single state to store all values using useState
       const handleChange = event => {
         // 3- implement a change handler that works for all three inputs
+        const { name, value } = event.target
+        setValues({ ...values, [name]: value })
       }
       return (
         <form onSubmit={e => e.preventDefault()}>
